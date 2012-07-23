@@ -1,0 +1,11 @@
+$( RenderViewNativePowerShell 'header_ps.html' $Model )
+
+<div class=""test"">
+	<ul>
+		 $( foreach($client in $Model.Clients) {"
+			<li>
+				$( $client )
+			</li>
+		"})
+	</ul>
+</div>
