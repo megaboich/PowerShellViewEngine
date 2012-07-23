@@ -6,7 +6,7 @@ Simple view engine for PowerShell, supports ASP-like formatting
 To try it out, just run the test.ps1
 
 Sample of view template:
-<pre>
+```html
 
 <% RenderView "header.html" $Model %>
 
@@ -20,4 +20,4 @@ Sample of view template:
 	</ul>
 </div>
 
-</pre>
+```
