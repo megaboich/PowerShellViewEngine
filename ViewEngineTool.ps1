@@ -35,16 +35,17 @@ function RenderView(
 			if ($normExpr.StartsWith('}')) {
 				$startClosure = '"'
 			}
+			$expr = $expr.Replace('""', "''")	#replace "" to '' - prevents error while evaluating template
 			$res += @($startClosure + $expr + $endClosure)
 		}
 		else #encode text blocks
-		{	
-			$expr = $part.Replace('"', '""');
+		{
+			$expr = $part.Replace('"', '~dblqt~');
 			$res += @($expr)
 		}
 	}
 	$viewExpr = $res -join ''
-	return $ExecutionContext.InvokeCommand.ExpandString('"' + $viewExpr + '"')
+	return $ExecutionContext.InvokeCommand.ExpandString('"' + $viewExpr + '"').Replace('~dblqt~', '"')
 }
 
 

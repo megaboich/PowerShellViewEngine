@@ -3,6 +3,8 @@
 
 function test()
 {
+	$test = "<div> $($env:COMPUTERNAME)</div>" 
+
 	#test model
 	$Model = @{}
 	$Model.Title = 'Hello, this is a test'
