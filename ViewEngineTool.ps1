@@ -5,8 +5,8 @@ function RenderViewNativePowerShell(
 )
 {
 	$viewFileName = Resolve-Path ('Views\' + $viewName)
-	$templateContent = Get-Content $viewFileName | Out-String
-	return $ExecutionContext.InvokeCommand.ExpandString('"' + $templateContent + '"')
+	$templateContent = Get-Content $viewFileName -encoding UTF8 | Out-String
+	return $ExecutionContext.InvokeCommand.ExpandString($templateContent)
 }
 
 function RenderView(
