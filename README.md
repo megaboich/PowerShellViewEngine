@@ -21,3 +21,5 @@ Sample of view template:
 </div>
 
 ```
+
+Full story of this module you can find in my blog: https://olekboiko.com/posts/2012-08-06-PowerShell-View-Engine-Asp-style/
